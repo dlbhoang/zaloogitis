@@ -80,7 +80,7 @@ export default function Tracking() {
           <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft-lg">
             <TrackingSearch onSearch={fetchTracking} loading={loading} />
             <div className="mt-3 text-xs text-slate-500">
-              Ví dụ: <span className="font-semibold text-slate-700">ZLL123456</span>
+              Nhập mã vận đơn mà bạn được cung cấp khi tạo yêu cầu vận chuyển.
             </div>
             {error && <div className="mt-3 text-sm text-red-600">{error}</div>}
           </div>
@@ -93,8 +93,8 @@ export default function Tracking() {
 
             {!data ? (
               <div className="mt-4 rounded-2xl bg-slate-50 p-4 text-sm text-slate-600">
-                Chưa có dữ liệu. Bạn thử mã demo:{" "}
-                <span className="font-semibold text-slate-800">ZLL123456</span>
+                Chưa có dữ liệu. Vui lòng kiểm tra lại mã vận đơn được cung cấp hoặc liên hệ bộ phận hỗ trợ nếu bạn
+                cần tra cứu giúp.
               </div>
             ) : (
               <div className="mt-4 space-y-4">

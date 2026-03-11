@@ -1,27 +1,28 @@
 import { NavLink, Link } from "react-router-dom";
-import { Truck, PackageSearch, MessageCircle, FileText, Shield } from "lucide-react";
+import { PackageSearch, MessageCircle, FileText, Shield } from "lucide-react";
+import logo from "../../assets/logo.jpg";
 
 const nav = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
-  { to: "/quote", label: "Quote" },
+  { to: "/", label: "Trang chủ" },
+  { to: "/about", label: "Về chúng tôi" },
+  { to: "/services", label: "Dịch vụ" },
+  { to: "/quote", label: "Báo giá" },
   { to: "/tracking", label: "Tracking" },
   { to: "/blog", label: "Blog" },
-  { to: "/contact", label: "Contact" }
+  { to: "/contact", label: "Liên hệ" }
 ];
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur shadow-sm">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link to="/" className="flex items-center gap-2 font-semibold text-slate-900">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[#0A66C2] text-white shadow-sm">
-            <Truck size={18} />
+        <Link to="/" className="flex items-center gap-3 font-semibold text-slate-900">
+          <span className="inline-flex h-9 w-9 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+            <img src={logo} alt="Logo ZaloLogistic" className="h-full w-full object-cover" loading="lazy" />
           </span>
           <span className="flex flex-col leading-tight">
-            <span className="text-sm">ZaloLogistic</span>
-            <span className="text-[10px] font-normal text-slate-500">
+            <span className="text-sm tracking-tight">ZaloLogistic</span>
+            <span className="text-[10px] font-normal uppercase tracking-[0.16em] text-slate-500">
               Logistics &amp; Transportation
             </span>
           </span>
@@ -33,8 +34,10 @@ export default function Header() {
               key={n.to}
               to={n.to}
               className={({ isActive }) =>
-                `text-sm font-medium ${
-                  isActive ? "text-[#0A66C2]" : "text-slate-600 hover:text-slate-900"
+                `text-sm font-medium transition ${
+                  isActive
+                    ? "text-[#0A66C2] underline underline-offset-4"
+                    : "text-slate-600 hover:text-slate-900"
                 }`
               }
             >
@@ -58,13 +61,7 @@ export default function Header() {
             <FileText size={16} />
             Get Quote
           </Link>
-          <Link
-            to="/admin"
-            className="ml-1 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
-            title="Admin"
-          >
-            <Shield size={16} />
-          </Link>
+         
         </div>
       </div>
 
